@@ -1,0 +1,74 @@
+First we have to make the folder in our personal drive "Folder name :- JENKINS SERVER".
+
+Then Copy and paste the server folder "APACHE TOMCAT" in the Jenkins Server Folder.
+
+Make sure that the server is clean and don't have any "WAR" file in the "WEB APP" folder of "SERVER".
+
+also make sure that the server folder also don't have "PROJECT FOLDER".
+
+Then open "CONF" Folder and find the "tomcat-users.xml" file and open that file in notepad and make changes in that file. 
+
+
+<!--
+  <role rolename="tomcat"/>
+  <role rolename="role1"/>
+  <user username="tomcat" password="<must-be-changed>" roles="tomcat"/>
+  <user username="both" password="<must-be-changed>" roles="tomcat,role1"/>
+  <user username="role1" password="<must-be-changed>" roles="role1"/>          
+-->
+
+ <user username="deployer" password="pass123" roles="manager-script"/>       //write that line after --> this.
+
+and then save the file and exit.
+
+then open your "SERVER BIN FOLDER" and run "STARTUP.BAT" file 
+
+Make sure that your server is runing when you deploye your project in the jenkins.
+
+then open chrome and search "localhost:8085" your Jenkins login page will open.
+
+then login with your credentials.
+
+then click on "MANAGE JENKINS" then find "PLUGINS" and click on that and then click on "AVAILABLE PLUGINS".
+
+And search "MAVEN INTEGRATION" and "DEPLOY TO CONTAINER" search them and install them in your jenkins.
+
+then go to "DASHBOARD" and click on "NEW ITEM" and gave the item name like "TESTPROJ-4" and select "MAVEN PROJECT" then press "OK".
+
+then search "SOURCE CODE MANAGEMENT" and select "GIT" and gave repository url like this "https://github.com/aastiksahu/Project-04-Practice.git"
+
+then find "Branch Specifier (blank for 'any')" and rename "*/master" to "main"
+
+then find "pre steps " after "pre steps" you find "build" and in build you have to rename "Root POM","pom.xml" to "ORSProject_4/pom.xml" before pom.xml you have to write your project name.
+
+and then type "clean install" in "Goals and options".
+
+then find "Post-build Actions" and in that select "Deploy war/ear to a container".
+
+then type "**/*.war" in "WAR/EAR files".
+
+then type Project name in "Context path ?" like this"ORSProject_4".
+
+then "apply " and "save".
+
+then find "configure" and click on them
+
+then find "Deploy war/ear to a container" and then click on "ADD CONTAINER" and select "Tomcat 9.x remote"
+
+then click on "add" and select "Jenkins" and gave "USERNAME : - deployer" and "PASS :- pass123" and then press "ADD".
+
+then select "CREDENTIALS" and in credentials you find your username and pass. select them .
+
+then in tomcat URL you to type:-http://localhost:8080.
+
+then "Apply and Save"
+
+then go to "Dashboard" and run the build
+
+then you have to see your build in "BUILD HISTORY" click on them 
+
+if your build is "Success" then go and check "Jenkins Server", "server", "web app" folder their you can see "war file & Project Folder" if the war file and project folder will be present their means your deployment is successful.
+
+then go to chrome and type http://localhost:8080/ORSProject_4 and your project will run.
+
+And if you make any changes in your project you have to commit your code in the git repo. first because Jenkins take your project from git then deploy it so if any changes occurred in your git repo. it will directly affect your Jenkins deployed project. 

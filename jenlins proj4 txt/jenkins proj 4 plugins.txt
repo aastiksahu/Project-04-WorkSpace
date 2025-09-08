@@ -23,7 +23,7 @@ and then save the file and exit.
 
 then open your "SERVER BIN FOLDER" and run "STARTUP.BAT" file 
 
-Make sure that your server is runing when you deploye your project in the jenkins.
+Make sure that your server is running when you deploy your project in the Jenkins.
 
 then open chrome and search "localhost:8085" your Jenkins login page will open.
 
@@ -31,11 +31,11 @@ then login with your credentials.
 
 then click on "MANAGE JENKINS" then find "PLUGINS" and click on that and then click on "AVAILABLE PLUGINS".
 
-And search "MAVEN INTEGRATION" and "DEPLOY TO CONTAINER" search them and install them in your jenkins.
+And search "MAVEN INTEGRATION" and "DEPLOY TO CONTAINER" search them and install them in your Jenkins.
 
 then go to "DASHBOARD" and click on "NEW ITEM" and gave the item name like "TESTPROJ-4" and select "MAVEN PROJECT" then press "OK".
 
-then search "SOURCE CODE MANAGEMENT" and select "GIT" and gave repository url like this "https://github.com/aastiksahu/Project-04-Practice.git"
+then search "SOURCE CODE MANAGEMENT" and select "GIT" and gave repository URL like this "https://github.com/aastiksahu/Project-04-Practice.git"
 
 then find "Branch Specifier (blank for 'any')" and rename "*/master" to "main"
 
@@ -47,7 +47,7 @@ then find "Post-build Actions" and in that select "Deploy war/ear to a container
 
 then type "**/*.war" in "WAR/EAR files".
 
-then type Project name in "Context path ?" like this"ORSProject_4".
+then type Project name in "Context path ?" like this "ORSProject_4".
 
 then "apply " and "save".
 

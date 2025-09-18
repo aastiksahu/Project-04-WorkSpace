@@ -17,7 +17,7 @@ Then open "CONF" Folder and find the "tomcat-users.xml" file and open that file 
   <user username="role1" password="<must-be-changed>" roles="role1"/>          
 -->
 
- <user username="deployer" password="pass123" roles="manager-script"/>       //write that line after --> this.
+ <user username="deployer" password="pass1234" roles="manager-script"/>       //write that line after --> this.
 
 and then save the file and exit.
 

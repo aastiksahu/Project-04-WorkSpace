@@ -55,7 +55,7 @@ then find "configure" and click on them
 
 then find "Deploy war/ear to a container" and then click on "ADD CONTAINER" and select "Tomcat 9.x remote"
 
-then click on "add" and select "Jenkins" and gave "USERNAME : - deployer" and "PASS :- pass123" and then press "ADD".
+then click on "add" and select "Jenkins" and gave "USERNAME : - deployer" and "PASS :- pass1234" and then press "ADD".
 
 then select "CREDENTIALS" and in credentials you find your username and pass. select them .
 

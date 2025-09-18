@@ -59,7 +59,7 @@ then click on "add" and select "Jenkins" and gave "USERNAME : - deployer" and "P
 
 then select "CREDENTIALS" and in credentials you find your username and pass. select them .
 
-then in tomcat URL you to type:-http://localhost:8080.
+then in tomcat URL you have to type:-"http://localhost:8080".
 
 then "Apply and Save"
 

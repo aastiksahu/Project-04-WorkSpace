@@ -2,9 +2,11 @@ pipeline {
     agent any
 
     environment {
+        JAVA_HOME = "C:\\Program Files\\Java\\jdk-11"
+        PATH = "${JAVA_HOME}\\bin;${PATH}"
         TOMCAT_HOME = 'D:\\Rays\\Project 04 Practice\\Jenkins Tom Server\\apache-tomcat-9.0.102'
         TOMCAT_WEBAPPS_PATH = "${TOMCAT_HOME}\\webapps"
-        TOMCAT_SERVICE_NAME = 'Tomcat9'  // Change this if your service name is different
+        TOMCAT_SERVICE_NAME = 'Tomcat9'  // Change if your service name is different
         MAVEN_HOME = "C:\\ProgramData\\Jenkins\\.jenkins\\tools\\hudson.tasks.Maven_MavenInstallation\\maven"
     }
 
@@ -32,7 +34,13 @@ pipeline {
                 script {
                     def warFile = "ORSProject_4\\target\\ORSProject_4.war"
                     def destination = "${TOMCAT_WEBAPPS_PATH}\\ORSProject_4.war"
-                    bat "xcopy /Y /F \"${warFile}\" \"${destination}\""
+
+                    // Optional: clean old deployment
+                    bat "rmdir /S /Q \"${TOMCAT_WEBAPPS_PATH}\\ORSProject_4\" || exit 0"
+                    bat "del /Q \"${destination}\" || exit 0"
+
+                    // Copy new WAR
+                    bat "copy /Y \"${warFile}\" \"${destination}\""
                 }
             }
         }

@@ -4,7 +4,7 @@ pipeline {
     environment {
         JAVA_HOME = "C:\\Program Files\\Java\\jdk-11"
         PATH = "${JAVA_HOME}\\bin;${PATH}"
-        TOMCAT_HOME = 'D:\\Rays\\Project 04 Practice\\Jenkins Tom Server\\apache-tomcat-9.0.102'
+        TOMCAT_HOME = 'D:\\Rays\\Project 04 Practice\\Server\\apache-tomcat-9.0.102'
         TOMCAT_WEBAPPS_PATH = "${TOMCAT_HOME}\\webapps"
         TOMCAT_SERVICE_NAME = 'Tomcat9'  // Change if your service name is different
         MAVEN_HOME = "C:\\ProgramData\\Jenkins\\.jenkins\\tools\\hudson.tasks.Maven_MavenInstallation\\maven"
